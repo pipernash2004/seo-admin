@@ -1,6 +1,6 @@
 export async function generateMetadata() {
   const res = await fetch(
-    "http://127.0.0.1:8000/api/configurations/seo-configs/?page_name=home",
+    " https://j8s6hw8d-8000.uks1.devtunnels.ms//api/configurations/seo-configs/?page_name=home",
     { cache: "no-store" },
   );
 
