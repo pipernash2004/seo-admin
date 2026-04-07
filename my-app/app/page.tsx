@@ -1,7 +1,7 @@
 export async function generateMetadata() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SITE_URL}/api/configurations/seo-configs/?page_name=home`,
-    { next: { revalidate: 14400 } },
+    "https://j8s6hw8d-8000.uks1.devtunnels.ms//api/configurations/seo-configs/?page_name=home",
+    { next: { revalidate: 3600 } },
   );
 
   const data = await res.json();
