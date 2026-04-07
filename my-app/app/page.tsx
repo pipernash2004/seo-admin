@@ -1,7 +1,7 @@
 export async function generateMetadata() {
   const res = await fetch(
-    " https://j8s6hw8d-8000.uks1.devtunnels.ms//api/configurations/seo-configs/?page_name=home",
-    { cache: "no-store" },
+    `${process.env.NEXT_PUBLIC_SITE_URL}/api/configurations/seo-configs/?page_name=home`,
+    { next: { revalidate: 14400 } },
   );
 
   const data = await res.json();
@@ -12,8 +12,10 @@ export async function generateMetadata() {
     description: seo?.meta_description_template || "Homepage",
     keywords: seo?.meta_keywords,
 
-    robots: seo?.robots_meta,
-
+    robots: {
+      index: seo.robots_meta?.includes("index") ?? true,
+      follow: seo.robots_meta?.includes("follow") ?? true,
+    },
     openGraph: {
       title: seo?.og_title_template,
       description: seo?.og_description_template,
