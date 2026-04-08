@@ -15,6 +15,7 @@ export async function generateMetadata() {
     robots: {
       index: seo.robots_meta?.includes("index") ?? true,
       follow: seo.robots_meta?.includes("follow") ?? true,
+      nocache: true,
     },
     openGraph: {
       title: seo?.og_title_template,
