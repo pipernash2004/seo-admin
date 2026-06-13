@@ -1,6 +1,6 @@
 export async function generateMetadata() {
   const res = await fetch(
-    "https://j8s6hw8d-8000.uks1.devtunnels.ms//api/configurations/seo-configs/?page_name=home",
+    "https://staging.muzukuru.com//api/configurations/seo-configs/?page_name=home",
     // { next: { revalidate: 3600 } },
   );
 
